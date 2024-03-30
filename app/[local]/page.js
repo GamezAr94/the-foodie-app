@@ -1,8 +1,10 @@
 import Link from "next/link";
 import classes from "./page.module.css";
 import ImageSlideshow from "./components/image-slideshow/imageslideshow";
+import initTranslations from "../i18n";
 
-export default function Home() {
+export default async function Home({ params }) {
+    const { t } = await initTranslations(params.local, ["home"]);
     return (
         <>
             <header className={classes.header}>
@@ -11,7 +13,10 @@ export default function Home() {
                 </div>
                 <div>
                     <div className={classes.hero}>
-                        <h1>NextLevel Food for NextLevel Foodies</h1>
+                        <h1>{t("header")}</h1>
+                        <h1>{t("header")}</h1>
+                        <h1>{t("header")}</h1>
+                        <h1>{t("header")}</h1>
                         <p>taste & share foor from all over the world.</p>
                     </div>
                     <div className={classes.cta}>
